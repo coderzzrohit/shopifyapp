@@ -6,7 +6,7 @@ import { isbot } from "isbot";
 import { addDocumentResponseHeaders } from "./shopify.server";
 
 export const streamTimeout = 5000;
-
+// check this code
 export default async function handleRequest(
   request,
   responseStatusCode,
