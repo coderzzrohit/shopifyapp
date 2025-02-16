@@ -1,0 +1,37 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "8d35c64a6663dab2d358f2dcca08f648"
+application_url = "https://excellence-passengers-resource-observation.trycloudflare.com"
+embedded = true
+name = "premium-merchandise-app"
+handle = "premium-merchandise-app-16"
+
+[build]
+include_config_on_deploy = true
+dev_store_url = "quickstart-d1cb6a5c.myshopify.com"
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,write_customers,read_customers,read_orders,write_order_edits"
+
+[auth]
+redirect_urls = [
+  "https://excellence-passengers-resource-observation.trycloudflare.com/auth/callback",
+  "https://excellence-passengers-resource-observation.trycloudflare.com/auth/shopify/callback",
+  "https://excellence-passengers-resource-observation.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
